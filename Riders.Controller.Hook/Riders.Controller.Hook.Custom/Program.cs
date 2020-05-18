@@ -15,6 +15,7 @@ namespace Riders.Controller.Hook.Custom
         /// Your mod if from ModConfig.json, used during initialization.
         /// </summary>
         private const string MyModId = "Riders.Controller.Hook.Custom";
+        private const string HookModId = "Riders.Controller.Hook";
 
         /// <summary>
         /// Used for writing text to the console window.
@@ -43,7 +44,14 @@ namespace Riders.Controller.Hook.Custom
 
             /* Your mod code starts here. */
             _input = new Input(_modLoader.GetDirectoryForModId(MyModId));
+            _modLoader.ModLoaded += ModLoaded;
             SetupController();
+        }
+
+        private void ModLoaded(IModV1 modInstance, IModConfigV1 modConfig)
+        {
+            if (modConfig.ModId == HookModId)
+                SetupController();
         }
 
         private void SetupController()

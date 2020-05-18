@@ -4,7 +4,6 @@ using Reloaded.Mod.Interfaces;
 using Reloaded.Mod.Interfaces.Internal;
 using Riders.Controller.Hook.Interfaces;
 using Riders.Controller.Hook.Interfaces.Structs;
-using Riders.Controller.Hook.PostProcess.Configuration;
 using Riders.Controller.Hook.PostProcess.Configuration.Implementation;
 
 namespace Riders.Controller.Hook.PostProcess
@@ -15,6 +14,7 @@ namespace Riders.Controller.Hook.PostProcess
         /// Your mod if from ModConfig.json, used during initialization.
         /// </summary>
         private const string MyModId = "Riders.Controller.Hook.PostProcess";
+        private const string HookModId = "Riders.Controller.Hook";
 
         /// <summary>
         /// Used for writing text to the console window.
@@ -25,11 +25,6 @@ namespace Riders.Controller.Hook.PostProcess
         /// Provides access to the mod loader API.
         /// </summary>
         private IModLoader _modLoader;
-
-        /// <summary>
-        /// Stores the contents of your mod's configuration. Automatically updated by template.
-        /// </summary>
-        private Config _configuration;
 
         /// <summary>
         /// Provides post-processing for controller inputs.
@@ -49,13 +44,15 @@ namespace Riders.Controller.Hook.PostProcess
             _modLoader = (IModLoader)loader;
             Logger = (ILogger)_modLoader.GetLogger();
 
-            // Your config file is in Config.json.
-            // Need a different name, format or more configurations? Modify the `Configurator`.
-            // If you do not want a config, remove Configuration folder and Config class.
             _postProcess = new PostProcess(_modLoader.GetDirectoryForModId(MyModId));
-
-            /* Your mod code starts here. */
+            _modLoader.ModLoaded += ModLoaded;
             SetupController();
+        }
+
+        private void ModLoaded(IModV1 modInstance, IModConfigV1 modConfig)
+        {
+            if (modConfig.ModId == HookModId)
+                SetupController();
         }
 
         private void SetupController()
