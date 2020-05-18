@@ -13,7 +13,7 @@ namespace Riders.Controller.Hook.Custom
 {
     public class Input
     {
-        private string ModFolder;
+            private string ModFolder;
         private VirtualController[] Controllers;
 
         public Input(string modFolder)
@@ -47,8 +47,12 @@ namespace Riders.Controller.Hook.Custom
                 var rightBumper = controller.GetAxis((int) MappingEntries.RightBumperPressure);
                 inputs.AnalogStickX = AnalogToRidersRange(leftStickX);
                 inputs.AnalogStickY = AnalogToRidersRange(leftStickY);
-                inputs.LeftBumperPressure = TriggerToRidersRange(leftBumper);
-                inputs.RightBumperPressure = TriggerToRidersRange(rightBumper);
+
+                if (controller.GetMapping((int)MappingEntries.LeftBumperPressure) != null)
+                    inputs.LeftBumperPressure = TriggerToRidersRange(leftBumper);
+
+                if (controller.GetMapping((int)MappingEntries.RightBumperPressure) != null)
+                    inputs.RightBumperPressure = TriggerToRidersRange(rightBumper);
 
                 // Button to Axis
                 if (controller.GetButton((int)MappingEntries.Up)) inputs.AnalogStickY = 100;
