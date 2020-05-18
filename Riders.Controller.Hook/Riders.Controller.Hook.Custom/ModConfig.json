@@ -1,0 +1,16 @@
+{
+  "ModId": "Riders.Controller.Hook.Custom",
+  "ModName": "Custom Mapping for Riders Controller Hook",
+  "ModAuthor": "Sewer56",
+  "ModVersion": "1.0.0",
+  "ModDescription": "Map your own controller configuration.",
+  "ModDll": "Riders.Controller.Hook.Custom.dll",
+  "ModIcon": "Preview.png",
+  "ModR2RManagedDll32": "x86/Riders.Controller.Hook.Custom.dll",
+  "ModR2RManagedDll64": "x64/Riders.Controller.Hook.Custom.dll",
+  "ModNativeDll32": "",
+  "ModNativeDll64": "",
+  "ModDependencies": [ "reloaded.sharedlib.hooks", "Riders.Controller.Hook" ],
+  "OptionalDependencies": null,
+  "SupportedAppId": [ "sonicriders.exe" ]
+}

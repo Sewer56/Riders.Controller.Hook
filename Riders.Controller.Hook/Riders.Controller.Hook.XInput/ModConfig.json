@@ -1,0 +1,16 @@
+{
+  "ModId": "Riders.Controller.Hook.XInput",
+  "ModName": "XInput for Riders Controller Hook",
+  "ModAuthor": "Sewer56",
+  "ModVersion": "1.0.0",
+  "ModDescription": "Adds XInput controller support to Riders using the Controller Hook",
+  "ModDll": "Riders.Controller.Hook.XInput.dll",
+  "ModIcon": "Preview.png",
+  "ModR2RManagedDll32": "x86/Riders.Controller.Hook.XInput.dll",
+  "ModR2RManagedDll64": "x64/Riders.Controller.Hook.XInput.dll",
+  "ModNativeDll32": "",
+  "ModNativeDll64": "",
+  "ModDependencies": [ "Riders.Controller.Hook" ],
+  "OptionalDependencies": null,
+  "SupportedAppId": [ "sonicriders.exe" ]
+}

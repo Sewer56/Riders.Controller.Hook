@@ -1,0 +1,16 @@
+{
+  "ModId": "Riders.Controller.Hook",
+  "ModName": "Riders Controller Hook",
+  "ModAuthor": "Sewer56",
+  "ModVersion": "1.0.0",
+  "ModDescription": "Allows other mods to obtain a copy of game inputs or submit inputs to the game.",
+  "ModDll": "Riders.Controller.Hook.dll",
+  "ModIcon": "Preview.png",
+  "ModR2RManagedDll32": "x86/Riders.Controller.Hook.dll",
+  "ModR2RManagedDll64": "x64/Riders.Controller.Hook.dll",
+  "ModNativeDll32": "",
+  "ModNativeDll64": "",
+  "ModDependencies": [ "reloaded.sharedlib.hooks", "Reloaded.Universal.DInputPleaseCooperate" ],
+  "OptionalDependencies": null,
+  "SupportedAppId": [ "sonicriders.exe" ]
+}
