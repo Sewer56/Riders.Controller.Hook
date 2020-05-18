@@ -2,7 +2,7 @@
   "ModId": "Riders.Controller.Hook.Custom",
   "ModName": "Custom Mapping for Riders Controller Hook",
   "ModAuthor": "Sewer56",
-  "ModVersion": "1.0.1",
+  "ModVersion": "1.0.2",
   "ModDescription": "Map your own controller configuration.",
   "ModDll": "Riders.Controller.Hook.Custom.dll",
   "ModIcon": "Preview.png",
