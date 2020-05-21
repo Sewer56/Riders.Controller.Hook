@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Text.Json.Serialization;
 using Riders.Controller.Hook.PostProcess.Configuration.Implementation;
 using Riders.Controller.Hook.PostProcess.Configuration.Structures;
 
@@ -8,10 +9,16 @@ namespace Riders.Controller.Hook.PostProcess.Configuration
     {
         public bool SimulateGameCubeAnalogControls { get; set; } = false;
 
-        public StickDeadzone LeftStickXDeadzone { get; set; } = new StickDeadzone();
-        public StickDeadzone LeftStickYDeadzone { get; set; } = new StickDeadzone();
+        [JsonPropertyName("LeftStickXDeadzone")]
+        public StickSettings LeftStickXSettings { get; set; } = new StickSettings();
 
-        public TriggerDeadzone LeftTriggerDeadzone { get; set; } = new TriggerDeadzone();
-        public TriggerDeadzone RightTriggerDeadzone { get; set; } = new TriggerDeadzone();
+        [JsonPropertyName("LeftStickYDeadzone")]
+        public StickSettings LeftStickYSettings { get; set; } = new StickSettings();
+
+        [JsonPropertyName("LeftTriggerDeadzone")]
+        public TriggerSettings LeftTriggerSettings { get; set; } = new TriggerSettings();
+
+        [JsonPropertyName("RightTriggerDeadzone")]
+        public TriggerSettings RightTriggerSettings { get; set; } = new TriggerSettings();
     }
 }

@@ -38,10 +38,10 @@ namespace Riders.Controller.Hook.PostProcess
         {
             var config = _configurations[port];
 
-            inputs.AnalogStickX = config.LeftStickXDeadzone.ApplyDeadzone(inputs.AnalogStickX);
-            inputs.AnalogStickY = config.LeftStickYDeadzone.ApplyDeadzone(inputs.AnalogStickY);
-            inputs.LeftBumperPressure = config.LeftTriggerDeadzone.ApplyDeadzone(inputs.LeftBumperPressure);
-            inputs.RightBumperPressure = config.RightTriggerDeadzone.ApplyDeadzone(inputs.RightBumperPressure);
+            inputs.AnalogStickX = config.LeftStickXSettings.ApplySettings(inputs.AnalogStickX);
+            inputs.AnalogStickY = config.LeftStickYSettings.ApplySettings(inputs.AnalogStickY);
+            inputs.LeftBumperPressure = config.LeftTriggerSettings.ApplySettings(inputs.LeftBumperPressure);
+            inputs.RightBumperPressure = config.RightTriggerSettings.ApplySettings(inputs.RightBumperPressure);
 
             if (config.SimulateGameCubeAnalogControls)
             {
