@@ -7,6 +7,9 @@ namespace Riders.Controller.Hook.PostProcess.Configuration.Structures
 {
     public class StickSettings
     {
+        public const sbyte MaxValue = 100;
+        public const sbyte MinValue = -100;
+
         public bool IsEnabled { get; set; } = true;
         public float DeadzonePercent { get; set; } = 25.0F;
         public float RadiusScale { get; set; } = 1.0f;
@@ -25,8 +28,11 @@ namespace Riders.Controller.Hook.PostProcess.Configuration.Structures
         public sbyte ScaleValue(sbyte stickValue)
         {
             var scaled = stickValue * RadiusScale;
-            if (scaled > sbyte.MaxValue)
-                scaled = sbyte.MaxValue;
+            if (scaled > MaxValue)
+                scaled = MaxValue;
+
+            if (scaled < MinValue)
+                scaled = MinValue;
 
             return (sbyte) scaled;
         }
