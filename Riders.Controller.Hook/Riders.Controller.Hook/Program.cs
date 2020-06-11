@@ -4,6 +4,7 @@ using Reloaded.Hooks.Definitions;
 using Reloaded.Mod.Interfaces;
 using Reloaded.Mod.Interfaces.Internal;
 using Riders.Controller.Hook.Interfaces;
+using Sewer56.SonicRiders;
 using IReloadedHooks = Reloaded.Hooks.ReloadedII.Interfaces.IReloadedHooks;
 
 namespace Riders.Controller.Hook
@@ -45,8 +46,8 @@ namespace Riders.Controller.Hook
             _modLoader.GetController<IReloadedHooks>().TryGetTarget(out _hooks);
             _modLoader.GetController<IReloadedHooksUtilities>().TryGetTarget(out _hooksUtilities);
 
-
             /* Your mod code starts here. */
+            SDK.Init(_hooks);
             _hook = new ControllerHook(_hooks);
             _fourPlayerPatch = new FourPlayerPatch(_hooks, _hooksUtilities);
             _modLoader.AddOrReplaceController<IControllerHook>(this, _hook);

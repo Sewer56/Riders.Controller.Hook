@@ -4,8 +4,7 @@ using Reloaded.Hooks.Definitions.X86;
 using Riders.Controller.Hook.Interfaces;
 using Riders.Controller.Hook.Interfaces.Structs;
 using Riders.Controller.Hook.Structs;
-using Sewer56.SonicRiders.Fields;
-using Sewer56.SonicRiders.Structures.Gameplay;
+using Sewer56.SonicRiders.API;
 using IReloadedHooks = Reloaded.Hooks.ReloadedII.Interfaces.IReloadedHooks;
 
 namespace Riders.Controller.Hook
@@ -22,7 +21,7 @@ namespace Riders.Controller.Hook
         {
             _hooks = hooks;
             _inputsHook = _hooks.CreateHook<HandleInputs>(HandleInputsImpl, 0x00513B70).Activate();
-            _lastFrameInputs = new Sewer56.SonicRiders.Structures.Input.PlayerInput[Player.NumberOfPlayers];
+            _lastFrameInputs = new Sewer56.SonicRiders.Structures.Input.PlayerInput[Player.MaxNumberOfPlayers];
         }
 
         private unsafe int HandleInputsImpl()
@@ -30,7 +29,7 @@ namespace Riders.Controller.Hook
             if (Window.IsAnyWindowActivated())
             {
                 _frameCounter += 1;
-                for (int x = 0; x < Player.NumberOfPlayers; x++)
+                for (int x = 0; x < Player.MaxNumberOfPlayers; x++)
                 {
                     // Get inputs from player and convert to our format.
                     IPlayerInput inputs = new PlayerInput();
@@ -53,13 +52,13 @@ namespace Riders.Controller.Hook
 
                     // Write inputs back to player.
                     _lastFrameInputs[x] = libraryInputs;
-                    Players.PlayerInputs[x] = libraryInputs;
+                    Player.Inputs[x] = libraryInputs;
                 }
 
                 // Handle menu.
-                var playerOneInputs = Players.PlayerInputs[0];
-                *Menus.MenuInputPress = playerOneInputs.ButtonsPressed;
-                *Menus.MenuInputHold = playerOneInputs.Flicker;
+                var playerOneInputs = Player.Inputs[0];
+                *Player.MenuInputPress = playerOneInputs.ButtonsPressed;
+                *Player.MenuInputHold = playerOneInputs.Flicker;
 
                 if (_frameCounter >= Sewer56.SonicRiders.Structures.Input.PlayerInput.TickPeriodFrames)
                     _frameCounter = 0;

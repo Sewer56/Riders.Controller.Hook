@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.X86;
-using Sewer56.SonicRiders.Fields;
+using Sewer56.SonicRiders.Functions;
 using Sewer56.SonicRiders.Structures.Enums;
+using Sewer56.SonicRiders.Utility;
 
 namespace Riders.Controller.Hook
 {
@@ -12,49 +12,50 @@ namespace Riders.Controller.Hook
     {
         private IReloadedHooks _hooks;
         private IReloadedHooksUtilities _hooksUtilities;
-        private IHook<sub_00462000> _characterSelectHook;
+        private TaskTracker _taskTracker;
+        private IHook<Functions.DefaultTaskFnWithReturn> _hook;
 
         public FourPlayerPatch(IReloadedHooks hooks, IReloadedHooksUtilities hooksUtilities)
         {
             _hooks = hooks;
             _hooksUtilities = hooksUtilities;
-            _characterSelectHook = _hooks.CreateHook<sub_00462000>(CharacterSelectImpl, 0x462000).Activate();
+            _taskTracker = new TaskTracker();
+            _hook = Functions.CharaSelectTask.Hook(CharacterSelectImpl).Activate();
         }
 
-        private unsafe void CharacterSelectImpl()
+        private unsafe int CharacterSelectImpl()
         {
-            Menus.Refresh();
-            var characterSelect = Menus.CharacterSelectMenu;
-            var mainMenu = Menus.MainMenu;
-
-            switch (mainMenu->RaceMode)
+            if (_taskTracker.CharacterSelect != null && _taskTracker.TitleSequence != null)
             {
-                case RaceMode.TimeTrial:
-                    characterSelect->MaximumPlayerCount = 1;
-                    break;
-                case RaceMode.GrandPrix:
-                    characterSelect->MaximumPlayerCount = 2;
-                    break;
-                default:
-                    characterSelect->MaximumPlayerCount = 4;
-                    break;
+                var titleData = _taskTracker.TitleSequence->TaskData;
+                var charaData = _taskTracker.CharacterSelect->TaskData;
+                switch (titleData->RaceMode)
+                {
+                    case RaceMode.TimeTrial:
+                        charaData->MaximumPlayerCount = 1;
+                        break;
+                    case RaceMode.GrandPrix:
+                        charaData->MaximumPlayerCount = 2;
+                        break;
+                    default:
+                        charaData->MaximumPlayerCount = 4;
+                        break;
+                }
             }
 
-            _characterSelectHook.OriginalFunction();
+            return _hook.OriginalFunction();
         }
 
         public void Resume()
         {
-            _characterSelectHook.Enable();
+            _hook.Enable();
+            _taskTracker.Enable();
         }
 
         public void Suspend()
         {
-            _characterSelectHook.Disable();
+            _hook.Disable();
+            _taskTracker.Disable();
         }
-
-        [Function(CallingConventions.Cdecl)]
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate void sub_00462000();
     }
 }
