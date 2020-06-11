@@ -2,7 +2,7 @@
   "ModId": "Riders.Controller.Hook",
   "ModName": "Riders Controller Hook",
   "ModAuthor": "Sewer56",
-  "ModVersion": "1.0.3",
+  "ModVersion": "1.0.4",
   "ModDescription": "Allows other mods to obtain a copy of game inputs or submit inputs to the game.",
   "ModDll": "Riders.Controller.Hook.dll",
   "ModIcon": "Preview.png",
