@@ -45,10 +45,11 @@ namespace Riders.Controller.Hook.PostProcess
 
             if (config.SimulateGameCubeAnalogControls)
             {
-                var vector = new Vector2(inputs.AnalogStickX, inputs.AnalogStickY);
+                var vector     = new Vector2(inputs.AnalogStickX, inputs.AnalogStickY);
+                var length     = vector.Length();
                 var normalized = Vector2.Normalize(vector);
-                inputs.AnalogStickX = (sbyte) (normalized.X * 100);
-                inputs.AnalogStickY = (sbyte) (normalized.Y * 100);
+                inputs.AnalogStickX = (sbyte) (normalized.X * length);
+                inputs.AnalogStickY = (sbyte) (normalized.Y * length);
             }
         }
     }
