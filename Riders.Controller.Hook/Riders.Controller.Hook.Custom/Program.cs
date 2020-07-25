@@ -100,7 +100,6 @@ namespace Riders.Controller.Hook.Custom
 
             var configurator = new Input(folderPath);
             configurator.Configure();
-            int a = 5;
         }
     }
 }

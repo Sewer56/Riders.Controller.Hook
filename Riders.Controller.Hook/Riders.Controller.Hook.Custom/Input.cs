@@ -55,10 +55,29 @@ namespace Riders.Controller.Hook.Custom
                     inputs.RightBumperPressure = TriggerToRidersRange(rightBumper);
 
                 // Button to Axis
-                if (controller.GetButton((int)MappingEntries.Up)) inputs.AnalogStickY = 100;
-                if (controller.GetButton((int)MappingEntries.Down)) inputs.AnalogStickY = -100;
-                if (controller.GetButton((int)MappingEntries.Left)) inputs.AnalogStickX = -100;
-                if (controller.GetButton((int)MappingEntries.Right)) inputs.AnalogStickX = 100;
+                if (controller.GetButton((int) MappingEntries.Up))
+                {
+                    inputs.AnalogStickY = 100;
+                    inputs.Buttons |= Buttons.Up;
+                }
+
+                if (controller.GetButton((int) MappingEntries.Down))
+                {
+                    inputs.AnalogStickY = -100;
+                    inputs.Buttons |= Buttons.Down;
+                }
+
+                if (controller.GetButton((int) MappingEntries.Left))
+                {
+                    inputs.AnalogStickX = -100;
+                    inputs.Buttons |= Buttons.Left;
+                }
+
+                if (controller.GetButton((int) MappingEntries.Right))
+                {
+                    inputs.AnalogStickX = 100;
+                    inputs.Buttons |= Buttons.Right;
+                }
             }
         }
 
