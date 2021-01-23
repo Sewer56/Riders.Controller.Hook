@@ -44,8 +44,8 @@ namespace Riders.Controller.Hook.Custom
             // Button Axis
             new MappingEntry("Analog Stick X", (int) MappingEntries.LeftStickX, MappingType.Axis),
             new MappingEntry("Analog Stick Y", (int) MappingEntries.LeftStickY, MappingType.Axis),
-            new MappingEntry("Left Bumper", (int) MappingEntries.LeftBumperPressure, MappingType.Axis),
-            new MappingEntry("Right Bumper", (int) MappingEntries.RightBumperPressure, MappingType.Axis),
+            new MappingEntry("Left Trigger", (int) MappingEntries.LeftBumperPressure, MappingType.Axis),
+            new MappingEntry("Right Trigger", (int) MappingEntries.RightBumperPressure, MappingType.Axis),
         };
     }
 }
