@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -7,12 +8,10 @@ namespace Riders.Controller.Hook.PostProcess.Configuration.Structures
 {
     public class TriggerSettings
     {
-        public bool IsEnabled { get; set; }
         public float DeadzonePercent { get; set; }
         public float RadiusScale { get; set; } = 1.0f;
         public bool IsInverted   { get; set; } = false;
 
-        
         public float GetMinimumPressure() => (DeadzonePercent / 100.0F) * byte.MaxValue;
 
         public byte ApplySettings(byte stickValue)
@@ -36,12 +35,12 @@ namespace Riders.Controller.Hook.PostProcess.Configuration.Structures
 
         public byte ApplyDeadzone(byte triggerValue)
         {
-            if (triggerValue < GetMinimumPressure() && IsEnabled)
+            if (triggerValue < GetMinimumPressure())
                 return 0;
 
             return triggerValue;
         }
 
-        public override string ToString() => $"Enabled: {IsEnabled}, Deadzone: {DeadzonePercent}, Invert: {IsInverted}";
+        public override string ToString() => $"Deadzone: {DeadzonePercent}, Invert: {IsInverted}";
     }
 }
