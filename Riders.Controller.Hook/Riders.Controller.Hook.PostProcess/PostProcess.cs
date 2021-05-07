@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Text;
 using Riders.Controller.Hook.Interfaces.Structs;
+using Riders.Controller.Hook.Interfaces.Structs.Enums;
 using Riders.Controller.Hook.PostProcess.Configuration;
 using Riders.Controller.Hook.PostProcess.Configuration.Implementation;
 
@@ -42,6 +43,12 @@ namespace Riders.Controller.Hook.PostProcess
             inputs.AnalogStickY = config.LeftStickYSettings.ApplySettings(inputs.AnalogStickY);
             inputs.LeftBumperPressure = config.LeftTriggerSettings.ApplySettings(inputs.LeftBumperPressure);
             inputs.RightBumperPressure = config.RightTriggerSettings.ApplySettings(inputs.RightBumperPressure);
+
+            if (config.LeftTriggerSettings.IsSimulatingDigitalInput(inputs.LeftBumperPressure))
+                inputs.Buttons |= Buttons.LeftDrift;
+
+            if (config.RightTriggerSettings.IsSimulatingDigitalInput(inputs.RightBumperPressure))
+                inputs.Buttons |= Buttons.RightDrift;
 
             if (config.SimulateGameCubeAnalogControls)
             {

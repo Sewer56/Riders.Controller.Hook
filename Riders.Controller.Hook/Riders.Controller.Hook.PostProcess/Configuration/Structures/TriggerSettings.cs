@@ -11,8 +11,10 @@ namespace Riders.Controller.Hook.PostProcess.Configuration.Structures
         public float DeadzonePercent { get; set; }
         public float RadiusScale { get; set; } = 1.0f;
         public bool IsInverted   { get; set; } = false;
+        public bool SimulateDigitalInput    { get; set; } = false;
+        public float SimulateDigitalPercent { get; set; } = 90f;
 
-        public float GetMinimumPressure() => (DeadzonePercent / 100.0F) * byte.MaxValue;
+        public float ScaleTriggerValue(float percent) => (percent / 100.0F) * byte.MaxValue;
 
         public byte ApplySettings(byte stickValue)
         {
@@ -35,10 +37,18 @@ namespace Riders.Controller.Hook.PostProcess.Configuration.Structures
 
         public byte ApplyDeadzone(byte triggerValue)
         {
-            if (triggerValue < GetMinimumPressure())
+            if (triggerValue < ScaleTriggerValue(DeadzonePercent))
                 return 0;
 
             return triggerValue;
+        }
+
+        public bool IsSimulatingDigitalInput(byte triggerValue)
+        {
+            if (SimulateDigitalInput || triggerValue < ScaleTriggerValue(SimulateDigitalPercent))
+                return false;
+
+            return true;
         }
 
         public override string ToString() => $"Deadzone: {DeadzonePercent}, Invert: {IsInverted}";
