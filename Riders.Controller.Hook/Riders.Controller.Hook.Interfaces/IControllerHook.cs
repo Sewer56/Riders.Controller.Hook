@@ -6,6 +6,16 @@ namespace Riders.Controller.Hook.Interfaces
     public interface IControllerHook
     {
         /// <summary>
+        /// If false, passes no inputs to the game.
+        /// </summary>
+        bool EnableInputs { get; set; }
+
+        /// <summary>
+        /// If true, requires the window to be focused to pass inputs to the game.
+        /// </summary>
+        bool RequireWindowFocus { get; set; }
+
+        /// <summary>
         /// This event allows you to send inputs to be registered by the game.
         /// Simply edit the passed by reference Inputs structure.
         /// </summary>

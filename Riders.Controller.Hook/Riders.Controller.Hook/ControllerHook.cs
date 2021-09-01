@@ -16,6 +16,8 @@ namespace Riders.Controller.Hook
         private Sewer56.SonicRiders.Structures.Input.PlayerInput[] _lastFrameInputs;
         private int _frameCounter = 0;
 
+        public bool EnableInputs { get; set; } = true;
+        public bool RequireWindowFocus { get; set; } = true;
 
         public ControllerHook(IReloadedHooks hooks)
         {
@@ -26,9 +28,22 @@ namespace Riders.Controller.Hook
 
         private unsafe int HandleInputsImpl()
         {
-            if (Window.IsAnyWindowActivated())
+            if (!EnableInputs)
+                return 0;
+
+            bool isActivated = RequireWindowFocus ? Window.IsAnyWindowActivated() : true;
+            if (isActivated)
             {
                 _frameCounter += 1;
+                if (SetInputs == null)
+                {
+                    var result = _inputsHook.OriginalFunction();
+                    for (int x = 0; x < Player.MaxNumberOfPlayers; x++)
+                        OnInput?.Invoke(PlayerInput.FromLibrary(ref Player.Inputs[x]), x);
+
+                    return result;
+                }
+
                 for (int x = 0; x < Player.MaxNumberOfPlayers; x++)
                 {
                     // Get inputs from player and convert to our format.
