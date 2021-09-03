@@ -89,13 +89,16 @@ namespace Riders.Controller.Hook
             return (0);
         }
 
-        private void ClearInputs()
+        private unsafe void ClearInputs()
         {
             for (int x = 0; x < Player.MaxNumberOfPlayers; x++)
             {
                 _lastFrameInputs[x] = default;
                 Player.Inputs[x] = default;
             }
+
+            *Player.MenuInputPress = default;
+            *Player.MenuInputHold = default;
         }
 
         /* Events */
