@@ -29,7 +29,15 @@ namespace Riders.Controller.Hook
         private unsafe int HandleInputsImpl()
         {
             if (!EnableInputs)
+            {
+                for (int x = 0; x < Player.MaxNumberOfPlayers; x++)
+                {
+                    _lastFrameInputs[x] = default;
+                    Player.Inputs[x] = default;
+                }
+
                 return 0;
+            }
 
             bool isActivated = RequireWindowFocus ? Window.IsAnyWindowActivated() : true;
             if (isActivated)
