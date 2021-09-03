@@ -30,12 +30,7 @@ namespace Riders.Controller.Hook
         {
             if (!EnableInputs)
             {
-                for (int x = 0; x < Player.MaxNumberOfPlayers; x++)
-                {
-                    _lastFrameInputs[x] = default;
-                    Player.Inputs[x] = default;
-                }
-
+                ClearInputs();
                 return 0;
             }
 
@@ -86,8 +81,21 @@ namespace Riders.Controller.Hook
                 if (_frameCounter >= Sewer56.SonicRiders.Structures.Input.PlayerInput.TickPeriodFrames)
                     _frameCounter = 0;
             }
+            else
+            {
+                ClearInputs();
+            }
 
             return (0);
+        }
+
+        private void ClearInputs()
+        {
+            for (int x = 0; x < Player.MaxNumberOfPlayers; x++)
+            {
+                _lastFrameInputs[x] = default;
+                Player.Inputs[x] = default;
+            }
         }
 
         /* Events */
