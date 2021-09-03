@@ -93,8 +93,9 @@ namespace Riders.Controller.Hook
         {
             for (int x = 0; x < Player.MaxNumberOfPlayers; x++)
             {
-                _lastFrameInputs[x] = default;
-                Player.Inputs[x] = default;
+                var libraryInputs = new Sewer56.SonicRiders.Structures.Input.PlayerInput();
+                libraryInputs.Finalize(ref _lastFrameInputs[x], _frameCounter);
+                Player.Inputs[x] = libraryInputs;
             }
 
             *Player.MenuInputPress = default;
