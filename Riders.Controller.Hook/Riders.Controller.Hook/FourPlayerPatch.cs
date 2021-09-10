@@ -17,8 +17,8 @@ namespace Riders.Controller.Hook
         private IReloadedHooks _hooks;
         private IReloadedHooksUtilities _hooksUtilities;
 
-        private IHook<Functions.DefaultTaskFnWithReturn> _titleHook;
-        private IHook<Functions.DefaultTaskFnWithReturn> _charaSelectHook;
+        private IHook<Functions.CdeclReturnByteFn> _titleHook;
+        private IHook<Functions.CdeclReturnByteFn> _charaSelectHook;
         private RaceMode _mode;
 
         public FourPlayerPatch(IReloadedHooks hooks, IReloadedHooksUtilities hooksUtilities)
