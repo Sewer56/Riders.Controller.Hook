@@ -1,8 +1,8 @@
-{
+﻿{
   "ModId": "Riders.Controller.Hook.PostProcess",
   "ModName": "Riders Controller Hook Post Process",
   "ModAuthor": "Sewer56",
-  "ModVersion": "1.2.0",
+  "ModVersion": "1.2.1",
   "ModDescription": "Provides input post processing effects such as applying deadzone.",
   "ModDll": "Riders.Controller.Hook.PostProcess.dll",
   "ModIcon": "Preview.png",
@@ -10,7 +10,48 @@
   "ModR2RManagedDll64": "",
   "ModNativeDll32": "",
   "ModNativeDll64": "",
-  "ModDependencies": [ "Riders.Controller.Hook" ],
-  "OptionalDependencies": null,
-  "SupportedAppId": [ "sonicriders.exe" ]
+  "IsLibrary": false,
+  "ReleaseMetadataFileName": "Riders.Controller.Hook.PostProcess.ReleaseMetadata.json",
+  "PluginData": {
+    "GitHubDependencies": {
+      "IdToConfigMap": {
+        "reloaded.sharedlib.hooks": {
+          "Config": {
+            "UserName": "Reloaded.SharedLib.Hooks.ReloadedII",
+            "RepositoryName": "Sewer56",
+            "UseReleaseTag": true,
+            "AssetFileName": "reloaded.sharedlib.hooks.zip"
+          }
+        },
+        "Reloaded.Universal.DInputPleaseCooperate": {
+          "Config": {
+            "UserName": "Reloaded-Project",
+            "RepositoryName": "Reloaded.Universal.DInputPleaseCooperate",
+            "UseReleaseTag": true,
+            "AssetFileName": "Mod.zip"
+          }
+        }
+      }
+    },
+    "GitHubRelease": {
+      "UserName": "Sewer56",
+      "RepositoryName": "Riders.Controller.Hook",
+      "UseReleaseTag": false,
+      "AssetFileName": "Mod.zip"
+    },
+    "NuGet": {
+      "AllowUpdateFromAnyRepository": false,
+      "DefaultRepositoryUrls": [
+        "http://packages.sewer56.moe:5000/v3/index.json"
+      ]
+    }
+  },
+  "IsUniversalMod": false,
+  "ModDependencies": [
+    "Riders.Controller.Hook"
+  ],
+  "OptionalDependencies": [],
+  "SupportedAppId": [
+    "sonicriders.exe"
+  ]
 }

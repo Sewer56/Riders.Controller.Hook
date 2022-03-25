@@ -1,31 +1,30 @@
-﻿namespace Riders.Controller.Hook.Custom.Enum
+﻿namespace Riders.Controller.Hook.Custom.Enum;
+
+public enum MappingEntries
 {
-    public enum MappingEntries
-    {
-        // Buttons
-        Accept,
-        Decline,
-        DPadUp,
-        DPadDown,
-        DPadLeft,
-        DPadRight,
-        Start,
-        LeftDrift,
-        RightDrift,
+    // Buttons
+    Accept,
+    Decline,
+    DPadUp,
+    DPadDown,
+    DPadLeft,
+    DPadRight,
+    Start,
+    LeftDrift,
+    RightDrift,
 
-        // Custom
-        Tornado,
+    // Custom
+    Tornado,
 
-        // Axis
-        LeftStickX,
-        LeftStickY,
-        LeftBumperPressure,
-        RightBumperPressure,
+    // Axis
+    LeftStickX,
+    LeftStickY,
+    LeftBumperPressure,
+    RightBumperPressure,
 
-        // Button Axis
-        Up,
-        Down,
-        Left,
-        Right,
-    }
+    // Button Axis
+    Up,
+    Down,
+    Left,
+    Right,
 }

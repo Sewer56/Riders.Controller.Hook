@@ -3,11 +3,29 @@
   <PropertyGroup>
     <TargetFramework>net5.0-windows</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <OutputType>WinExe</OutputType>
-    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
-	<RollForward>Major</RollForward>
+	  <RollForward>Major</RollForward>
+    <LangVersion>preview</LangVersion>
+    <RobustILLink>true</RobustILLink>
+    <OutputPath>$(RELOADEDIIMODS)\Riders.Controller.Hook.Custom</OutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <RobustLinkRoots Include="Riders.Controller.Hook.Custom" />
+    <RobustLinkRoots Include="Reloaded.Input" />
+    <RobustLinkRoots Include="Reloaded.Input.Configurator" />
+    <RobustLinkRoots Include="Reloaded.Mod.Loader.IO" />
+
+    <RobustLinkAssemblies Include="Sewer56.SonicRiders" />
+    <RobustLinkAssemblies Include="Reloaded.Memory" />
+    <RobustLinkAssemblies Include="SharpDX" />
+    <RobustLinkAssemblies Include="SharpDX.DirectInput" />
+    <RobustLinkAssemblies Include="SharpDX.XInput" />
+    <RobustLinkAssemblies Include="SharpDX.Direct3D9" />
+    <RobustLinkAssemblies Include="Sewer56.BitStream" />
+  </ItemGroup>
+
+  <Import Project="../Robust.Trimming.targets" />
 
   <ItemGroup>
     <None Remove="ModConfig.json" />
@@ -24,11 +42,12 @@
   <ItemGroup>
     <PackageReference Include="Reloaded.Input" Version="1.0.4" />
     <PackageReference Include="Reloaded.Input.Configurator" Version="1.0.3" />
-    <PackageReference Include="Reloaded.Mod.Interfaces" Version="1.9.0" />
+    <PackageReference Include="Reloaded.Mod.Interfaces" Version="2.1.0" />
+    <PackageReference Include="Reloaded.Mod.Loader.IO" Version="2.1.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Riders.Controller.Hook\Riders.Controller.Hook.csproj" />
+    <ProjectReference Include="..\Riders.Controller.Hook.Interfaces\Riders.Controller.Hook.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

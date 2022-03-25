@@ -1,8 +1,8 @@
-{
+﻿{
   "ModId": "Riders.Controller.Hook.Custom",
   "ModName": "Custom Mapping for Riders Controller Hook",
   "ModAuthor": "Sewer56",
-  "ModVersion": "1.0.8",
+  "ModVersion": "1.0.9",
   "ModDescription": "Map your own controller configuration.",
   "ModDll": "Riders.Controller.Hook.Custom.dll",
   "ModIcon": "Preview.png",
@@ -10,7 +10,49 @@
   "ModR2RManagedDll64": "",
   "ModNativeDll32": "",
   "ModNativeDll64": "",
-  "ModDependencies": [ "reloaded.sharedlib.hooks", "Riders.Controller.Hook" ],
-  "OptionalDependencies": null,
-  "SupportedAppId": [ "sonicriders.exe" ]
+  "IsLibrary": false,
+  "ReleaseMetadataFileName": "Riders.Controller.Hook.Custom.ReleaseMetadata.json",
+  "PluginData": {
+    "GitHubDependencies": {
+      "IdToConfigMap": {
+        "reloaded.sharedlib.hooks": {
+          "Config": {
+            "UserName": "Reloaded.SharedLib.Hooks.ReloadedII",
+            "RepositoryName": "Sewer56",
+            "UseReleaseTag": true,
+            "AssetFileName": "reloaded.sharedlib.hooks.zip"
+          }
+        },
+        "Reloaded.Universal.DInputPleaseCooperate": {
+          "Config": {
+            "UserName": "Reloaded-Project",
+            "RepositoryName": "Reloaded.Universal.DInputPleaseCooperate",
+            "UseReleaseTag": true,
+            "AssetFileName": "Mod.zip"
+          }
+        }
+      }
+    },
+    "GitHubRelease": {
+      "UserName": "Sewer56",
+      "RepositoryName": "Riders.Controller.Hook",
+      "UseReleaseTag": false,
+      "AssetFileName": "Mod.zip"
+    },
+    "NuGet": {
+      "AllowUpdateFromAnyRepository": false,
+      "DefaultRepositoryUrls": [
+        "http://packages.sewer56.moe:5000/v3/index.json"
+      ]
+    }
+  },
+  "IsUniversalMod": false,
+  "ModDependencies": [
+    "reloaded.sharedlib.hooks",
+    "Riders.Controller.Hook"
+  ],
+  "OptionalDependencies": [],
+  "SupportedAppId": [
+    "sonicriders.exe"
+  ]
 }
