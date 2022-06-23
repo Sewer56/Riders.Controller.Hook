@@ -2,7 +2,7 @@
   "ModId": "Riders.Controller.Hook.PostProcess",
   "ModName": "Riders Controller Hook Post Process",
   "ModAuthor": "Sewer56",
-  "ModVersion": "1.3.0",
+  "ModVersion": "1.3.1",
   "ModDescription": "Provides input post processing effects such as applying deadzone.",
   "ModDll": "Riders.Controller.Hook.PostProcess.dll",
   "ModIcon": "Preview.png",

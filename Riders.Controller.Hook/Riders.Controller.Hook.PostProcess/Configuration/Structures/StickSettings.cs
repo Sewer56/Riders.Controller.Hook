@@ -8,11 +8,6 @@ public class StickSettings
     public const sbyte MaxValue = 100;
     public const sbyte MinValue = -100;
 
-    [DisplayName("Enabled?")]
-    [Description("Enables this section of the settings.")]
-    [DefaultValue(true)]
-    public bool IsEnabled { get; set; } = true;
-
     [DisplayName("Deadzone (Percent)")]
     [Description("When the stick is under this value (in percent), the value is reported to the game as 0.")]
     [DefaultValue(25.0f)]
@@ -54,11 +49,11 @@ public class StickSettings
 
     public sbyte ApplyDeadzone(sbyte stickValue)
     {
-        if (Math.Abs(stickValue) < DeadzonePercent && IsEnabled)
+        if (Math.Abs(stickValue) < DeadzonePercent)
             return 0;
 
         return stickValue;
     }
 
-    public override string ToString() => $"Enabled: {IsEnabled}, Deadzone: {DeadzonePercent}, Invert: {IsInverted}";
+    public override string ToString() => $" Deadzone: {DeadzonePercent}, Invert: {IsInverted}";
 }
