@@ -15,13 +15,23 @@
   "PluginData": {
     "GitHubDependencies": {
       "IdToConfigMap": {
+        "Riders.Controller.Hook": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "Riders.Controller.Hook",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "Riders.Controller.Hook.ReleaseMetadata.json"
+        },
         "reloaded.sharedlib.hooks": {
           "Config": {
             "UserName": "Reloaded.SharedLib.Hooks.ReloadedII",
             "RepositoryName": "Sewer56",
             "UseReleaseTag": true,
             "AssetFileName": "reloaded.sharedlib.hooks.zip"
-          }
+          },
+          "ReleaseMetadataName": "Sewer56.Update.ReleaseMetadata.json"
         },
         "Reloaded.Universal.DInputPleaseCooperate": {
           "Config": {
@@ -29,7 +39,8 @@
             "RepositoryName": "Reloaded.Universal.DInputPleaseCooperate",
             "UseReleaseTag": true,
             "AssetFileName": "Mod.zip"
-          }
+          },
+          "ReleaseMetadataName": "Sewer56.Update.ReleaseMetadata.json"
         }
       }
     },
@@ -44,6 +55,17 @@
       "DefaultRepositoryUrls": [
         "http://packages.sewer56.moe:5000/v3/index.json"
       ]
+    },
+    "GameBananaDependencies": {
+      "IdToConfigMap": {
+        "Reloaded.Universal.DInputPleaseCooperate": {
+          "Config": {
+            "ItemType": "Mod",
+            "ItemId": 51227
+          },
+          "ReleaseMetadataName": "Sewer56.Update.ReleaseMetadata.json"
+        }
+      }
     }
   },
   "IsUniversalMod": false,
@@ -53,5 +75,6 @@
   "OptionalDependencies": [],
   "SupportedAppId": [
     "sonicriders.exe"
-  ]
+  ],
+  "ProjectUrl": "https://github.com/Sewer56/Riders.Controller.Hook"
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using Reloaded.Mod.Interfaces;
+﻿using Reloaded.Mod.Interfaces;
 using Reloaded.Mod.Interfaces.Internal;
 using Riders.Controller.Hook.Interfaces;
 using Riders.Controller.Hook.Interfaces.Structs;

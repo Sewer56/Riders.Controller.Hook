@@ -1,4 +1,4 @@
-﻿{
+{
   "ModId": "Riders.Controller.Hook",
   "ModName": "Riders Controller Hook",
   "ModAuthor": "Sewer56",
@@ -44,6 +44,17 @@
       "DefaultRepositoryUrls": [
         "http://packages.sewer56.moe:5000/v3/index.json"
       ]
+    },
+    "GameBananaDependencies": {
+      "IdToConfigMap": {
+        "Reloaded.Universal.DInputPleaseCooperate": {
+          "Config": {
+            "ItemType": "Mod",
+            "ItemId": 51227
+          },
+          "ReleaseMetadataName": "Sewer56.Update.ReleaseMetadata.json"
+        }
+      }
     }
   },
   "IsUniversalMod": false,
@@ -54,5 +65,6 @@
   "OptionalDependencies": [],
   "SupportedAppId": [
     "sonicriders.exe"
-  ]
+  ],
+  "ProjectUrl": "https://github.com/Sewer56/Riders.Controller.Hook"
 }

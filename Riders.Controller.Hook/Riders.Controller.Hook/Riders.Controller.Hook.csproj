@@ -7,21 +7,22 @@
     <OutputType>WinExe</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
-    <LangVersion>preview</LangVersion>
-    <RobustILLink>true</RobustILLink>
+    <LangVersion>10.0</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ReloadedILLink>true</ReloadedILLink>
     <OutputPath>$(RELOADEDIIMODS)\Riders.Controller.Hook</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <RobustLinkRoots Include="Riders.Controller.Hook" />
-    <RobustLinkAssemblies Include="Sewer56.SonicRiders" />
-    <RobustLinkAssemblies Include="Reloaded.Memory" />
-    <RobustLinkAssemblies Include="Sewer56.BitStream" />
-    <RobustLinkAssemblies Include="SharpDX.Direct3D9" />
-    <RobustLinkAssemblies Include="SharpDX" />
+    <ReloadedLinkRoots Include="Riders.Controller.Hook" />
+    <ReloadedLinkAssemblies Include="Sewer56.SonicRiders" />
+    <ReloadedLinkAssemblies Include="Reloaded.Memory" />
+    <ReloadedLinkAssemblies Include="Sewer56.BitStream" />
+    <ReloadedLinkAssemblies Include="SharpDX.Direct3D9" />
+    <ReloadedLinkAssemblies Include="SharpDX" />
   </ItemGroup>
 
-  <Import Project="../Robust.Trimming.targets" />
+  <Import Project="../Reloaded.Trimming.targets" />
 
   <ItemGroup>
     <None Remove="ModConfig.json" />
@@ -36,8 +37,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Reloaded.Memory" Version="4.1.4" />
-    <PackageReference Include="Reloaded.Mod.Interfaces" Version="2.1.0" />
+    <PackageReference Include="Reloaded.Memory" Version="8.0.1" />
+    <PackageReference Include="Reloaded.Mod.Interfaces" Version="2.3.0" ExcludeAssets="runtime" />
     <PackageReference Include="Reloaded.SharedLib.Hooks" Version="1.9.0" />
   </ItemGroup>
 

@@ -4,28 +4,30 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputType>WinExe</OutputType>
-	  <RollForward>Major</RollForward>
-    <LangVersion>preview</LangVersion>
-    <RobustILLink>true</RobustILLink>
+    <RollForward>Major</RollForward>
+    
+    <LangVersion>10.0</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ReloadedILLink>true</ReloadedILLink>
     <OutputPath>$(RELOADEDIIMODS)\Riders.Controller.Hook.Custom</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <RobustLinkRoots Include="Riders.Controller.Hook.Custom" />
-    <RobustLinkRoots Include="Reloaded.Input" />
-    <RobustLinkRoots Include="Reloaded.Input.Configurator" />
-    <RobustLinkRoots Include="Reloaded.Mod.Loader.IO" />
+    <ReloadedLinkRoots Include="Riders.Controller.Hook.Custom" />
+    <ReloadedLinkRoots Include="Reloaded.Input" />
+    <ReloadedLinkRoots Include="Reloaded.Input.Configurator" />
+    <ReloadedLinkRoots Include="Reloaded.Mod.Loader.IO" />
 
-    <RobustLinkAssemblies Include="Sewer56.SonicRiders" />
-    <RobustLinkAssemblies Include="Reloaded.Memory" />
-    <RobustLinkAssemblies Include="SharpDX" />
-    <RobustLinkAssemblies Include="SharpDX.DirectInput" />
-    <RobustLinkAssemblies Include="SharpDX.XInput" />
-    <RobustLinkAssemblies Include="SharpDX.Direct3D9" />
-    <RobustLinkAssemblies Include="Sewer56.BitStream" />
+    <ReloadedLinkAssemblies Include="Sewer56.SonicRiders" />
+    <ReloadedLinkAssemblies Include="Reloaded.Memory" />
+    <ReloadedLinkAssemblies Include="SharpDX" />
+    <ReloadedLinkAssemblies Include="SharpDX.DirectInput" />
+    <ReloadedLinkAssemblies Include="SharpDX.XInput" />
+    <ReloadedLinkAssemblies Include="SharpDX.Direct3D9" />
+    <ReloadedLinkAssemblies Include="Sewer56.BitStream" />
   </ItemGroup>
 
-  <Import Project="../Robust.Trimming.targets" />
+  <Import Project="../Reloaded.Trimming.targets" />
 
   <ItemGroup>
     <None Remove="ModConfig.json" />
@@ -40,10 +42,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Reloaded.Input" Version="1.0.4" />
-    <PackageReference Include="Reloaded.Input.Configurator" Version="1.0.3" />
-    <PackageReference Include="Reloaded.Mod.Interfaces" Version="2.1.0" />
-    <PackageReference Include="Reloaded.Mod.Loader.IO" Version="2.1.2" />
+    <PackageReference Include="Reloaded.Input" Version="2.0.1" />
+    <PackageReference Include="Reloaded.Input.Configurator" Version="2.1.0" />
+    <PackageReference Include="Reloaded.Mod.Interfaces" Version="2.3.0" />
+    <PackageReference Include="Reloaded.Mod.Loader.IO" Version="2.4.4" />
   </ItemGroup>
 
   <ItemGroup>

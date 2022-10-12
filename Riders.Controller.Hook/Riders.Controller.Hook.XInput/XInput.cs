@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Riders.Controller.Hook.Interfaces.Structs;
+﻿using Riders.Controller.Hook.Interfaces.Structs;
 using Riders.Controller.Hook.XInput.Configuration;
 using Riders.Controller.Hook.XInput.Configuration.Implementation;
 using Riders.Controller.Hook.XInput.Utilities;

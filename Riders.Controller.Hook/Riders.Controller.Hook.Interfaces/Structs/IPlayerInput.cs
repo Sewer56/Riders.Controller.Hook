@@ -1,5 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using Riders.Controller.Hook.Interfaces.Structs.Enums;
+﻿using Riders.Controller.Hook.Interfaces.Structs.Enums;
 
 namespace Riders.Controller.Hook.Interfaces.Structs
 {

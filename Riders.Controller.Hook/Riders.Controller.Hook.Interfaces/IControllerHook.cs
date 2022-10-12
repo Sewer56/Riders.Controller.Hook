@@ -1,5 +1,4 @@
-﻿using System;
-using Riders.Controller.Hook.Interfaces.Structs;
+﻿using Riders.Controller.Hook.Interfaces.Structs;
 
 namespace Riders.Controller.Hook.Interfaces
 {

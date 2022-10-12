@@ -5,18 +5,20 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <OutputType>WinExe</OutputType>
-    <LangVersion>preview</LangVersion>
-    <RobustILLink>true</RobustILLink>
+    
+    <LangVersion>10.0</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ReloadedILLink>true</ReloadedILLink>
     <OutputPath>$(RELOADEDIIMODS)\Riders.Controller.Hook.XInput</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <RobustLinkRoots Include="Riders.Controller.Hook.XInput" />
-    <RobustLinkAssemblies Include="SharpDX" />
-    <RobustLinkAssemblies Include="SharpDX.XInput" />
+    <ReloadedLinkRoots Include="Riders.Controller.Hook.XInput" />
+    <ReloadedLinkAssemblies Include="SharpDX" />
+    <ReloadedLinkAssemblies Include="SharpDX.XInput" />
   </ItemGroup>
 
-  <Import Project="../Robust.Trimming.targets" />
+  <Import Project="../Reloaded.Trimming.targets" />
 
   <ItemGroup>
     <None Remove="ModConfig.json" />
@@ -31,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Reloaded.Mod.Interfaces" Version="2.1.0" />
+    <PackageReference Include="Reloaded.Mod.Interfaces" Version="2.3.0" ExcludeAssets="runtime" />
     <PackageReference Include="SharpDX.XInput" Version="4.2.0" />
   </ItemGroup>
 

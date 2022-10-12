@@ -21,17 +21,12 @@ This project is a set of mods for [Reloaded II](https://github.com/Reloaded-Proj
 
 ## Inside This Repository
 
-#### Mods
-Hook: *Provides support for sending and post processing inputs to the game.*
-
-PostProcess: *Provides support for common input post processing effects such as deadzones, simulating gamecube .* (Requires Hook)
-
-Custom: *Provides support for custom binding using DInput & XInput Controllers.* (Requires Hook)
-
-XInput: *Provides support for XInput Controllers to be used by the game.* (Requires Hook)
-
-#### Controllers (For Programmers)
-Riders.Controller.Hook.Interfaces: *Provides support for other mods to set inputs, do input post processing, receive events on input.*
+[Hook](https://github.com/Sewer56/Riders.Controller.Hook/blob/master/README-HOOK.md): *Base mod. Provides support for other mods to send inputs to the game.*  
+[PostProcess](https://github.com/Sewer56/Riders.Controller.Hook/blob/master/README-POSTPROCESS.md): *Provides support for common input post processing effects such as deadzones, swapping triggers.*  
+[Custom](https://github.com/Sewer56/Riders.Controller.Hook/blob/master/README-POSTPROCESS.md): *Adds controller remapping support for both DInput & XInput Controllers.*  
+[XInput](https://github.com/Sewer56/Riders.Controller.Hook/blob/master/README-XINPUT.md): *If Custom doesn't work for you, use this for basic 360/XInput controller support.*  
+ 
+(Click one of these links to read the individual mod README(s))
 
 ## New Features
 - Simulate GameCube Controls.
@@ -47,14 +42,9 @@ Riders.Controller.Hook.Interfaces: *Provides support for other mods to set input
 	- The game normally only lets you remap some buttons.
 	- This is no longer the case.
 
-## How to Use
-**A.** Install Reloaded Mods as usual. (Extract to mod directory)
+## Controllers (For Programmers)
+`Riders.Controller.Hook.Interfaces`: *Provides support for other mods to set inputs, do input post processing, receive events on input.* (`IControllerHook`)
 
-**B.** Enable all mods and run the game. (This auto-generates the config files)
+## Acknowledgements
 
-**C.** Adjust controller configurations. (if necessary)
-
-Controller configurations can be found in each of the respective mod folders.
-
-`PostProcess` will allow you to adjust individual deadzones for each axis as well as a few other features.
-`XInput` will allow you to rebind all of the buttons for your Xbox or Xbox-like controller.
+[Controller by iconfield from Noun Project](https://thenounproject.com/browse/icons/term/controller/)  

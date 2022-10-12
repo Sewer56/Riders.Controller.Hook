@@ -20,28 +20,28 @@ public static class Mappings
 
     public static MappingEntry[] Entries = new MappingEntry[]
     {
-        new MappingEntry("Jump / Accept", (int) MappingEntries.Accept, MappingType.Button),
-        new MappingEntry("Boost / Decline", (int) MappingEntries.Decline, MappingType.Button),
-        new MappingEntry("Start", (int) MappingEntries.Start, MappingType.Button),
-        new MappingEntry("Left Drift", (int) MappingEntries.LeftDrift, MappingType.Button),
-        new MappingEntry("Right Drift", (int) MappingEntries.RightDrift, MappingType.Button),
-        new MappingEntry("Tornado", (int) MappingEntries.Tornado, MappingType.Button),
+        new("Jump / Accept", (int) MappingEntries.Accept, MappingType.Button, "Makes the character jump."),
+        new("Boost / Decline", (int) MappingEntries.Decline, MappingType.Button, "Makes the character boost."),
+        new("Start", (int) MappingEntries.Start, MappingType.Button, "Pauses the game."),
+        new("Left Drift", (int) MappingEntries.LeftDrift, MappingType.Button, "Makes the player drift."),
+        new("Right Drift", (int) MappingEntries.RightDrift, MappingType.Button, "Makes the character drift (alternative)."),
+        new("Tornado", (int) MappingEntries.Tornado, MappingType.Button, "Places a tornado down (macro for both drift buttons)."),
 
-        new MappingEntry("DPad Up", (int) MappingEntries.DPadUp, MappingType.Button),
-        new MappingEntry("DPad Down", (int) MappingEntries.DPadDown, MappingType.Button),
-        new MappingEntry("DPad Left", (int) MappingEntries.DPadLeft, MappingType.Button),
-        new MappingEntry("DPad Right", (int) MappingEntries.DPadRight, MappingType.Button),
-
-        // Button Axis
-        new MappingEntry("Up (Button)", (int) MappingEntries.Up, MappingType.Button),
-        new MappingEntry("Down (Button)", (int) MappingEntries.Down, MappingType.Button),
-        new MappingEntry("Left (Button)", (int) MappingEntries.Left, MappingType.Button),
-        new MappingEntry("Right (Button)", (int) MappingEntries.Right, MappingType.Button),
+        new("DPad Up", (int) MappingEntries.DPadUp, MappingType.Button),
+        new("DPad Down", (int) MappingEntries.DPadDown, MappingType.Button),
+        new("DPad Left", (int) MappingEntries.DPadLeft, MappingType.Button),
+        new("DPad Right", (int) MappingEntries.DPadRight, MappingType.Button),
 
         // Button Axis
-        new MappingEntry("Analog Stick X", (int) MappingEntries.LeftStickX, MappingType.Axis),
-        new MappingEntry("Analog Stick Y", (int) MappingEntries.LeftStickY, MappingType.Axis),
-        new MappingEntry("Left Trigger", (int) MappingEntries.LeftBumperPressure, MappingType.Axis),
-        new MappingEntry("Right Trigger", (int) MappingEntries.RightBumperPressure, MappingType.Axis),
+        new("Up (Button)", (int) MappingEntries.Up, MappingType.Button, "Button that emulates analog stick up (use with Keyboard etc.)."),
+        new("Down (Button)", (int) MappingEntries.Down, MappingType.Button, "Button that emulates analog stick down (use with Keyboard etc.)."),
+        new("Left (Button)", (int) MappingEntries.Left, MappingType.Button, "Button that emulates analog stick left (use with Keyboard etc.)."),
+        new("Right (Button)", (int) MappingEntries.Right, MappingType.Button, "Button that emulates analog stick right (use with Keyboard etc.)."),
+
+        // Button Axis
+        new("Analog Stick X", (int) MappingEntries.LeftStickX, MappingType.Axis, "Horizontal movement of the left analog stick."),
+        new("Analog Stick Y", (int) MappingEntries.LeftStickY, MappingType.Axis, "Vertical movement of the left analog stick."),
+        new("Left Trigger", (int) MappingEntries.LeftBumperPressure, MappingType.Axis, "Makes you drift."),
+        new("Right Trigger", (int) MappingEntries.RightBumperPressure, MappingType.Axis, "Makes you drift."),
     };
 }
