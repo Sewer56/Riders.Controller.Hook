@@ -39,8 +39,7 @@ public class Input
         if (port < 0 || port >= Controllers.Length) 
             return;
         var controller = Controllers[port];
-        if (port == 0) // All VirtualControllers have all real controllers, hence only one poll needed for all players.
-            controller.PollAll();
+        controller.PollAll();
 
         if (controller.GetButton((int) MappingEntries.Accept)) inputs.Buttons |= Buttons.Accept;
         if (controller.GetButton((int) MappingEntries.Decline)) inputs.Buttons |= Buttons.Decline;
