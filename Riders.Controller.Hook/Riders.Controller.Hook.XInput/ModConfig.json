@@ -2,7 +2,7 @@
   "ModId": "Riders.Controller.Hook.XInput",
   "ModName": "XInput for Riders Controller Hook",
   "ModAuthor": "Sewer56",
-  "ModVersion": "1.1.0",
+  "ModVersion": "1.1.1",
   "ModDescription": "Adds XInput controller support to Riders using the Controller Hook",
   "ModDll": "Riders.Controller.Hook.XInput.dll",
   "ModIcon": "Preview.png",
