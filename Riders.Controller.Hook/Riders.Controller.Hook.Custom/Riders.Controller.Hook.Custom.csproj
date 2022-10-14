@@ -17,6 +17,7 @@
     <ReloadedLinkRoots Include="Reloaded.Input" />
     <ReloadedLinkRoots Include="Reloaded.Input.Configurator" />
     <ReloadedLinkRoots Include="Reloaded.Mod.Loader.IO" />
+    <ReloadedLinkRoots Include="System.Runtime.CompilerServices.Unsafe" />
 
     <ReloadedLinkAssemblies Include="Sewer56.SonicRiders" />
     <ReloadedLinkAssemblies Include="Reloaded.Memory" />
